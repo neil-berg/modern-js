@@ -1,0 +1,103 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #F8F4F4;
+  --dark-purple: #492F81;
+  --light-purple: #8d2a6b;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  background: var(--bg-color);
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 600px;
+  border: 2px black solid;
+  border-radius: 10px;
+  box-shadow: 4px 4px grey;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header i:first-child {
+  margin-right: 1em;
+  font-size: 2em;
+}
+.header i:last-child {
+  margin-left: 1em;
+  font-size: 2em;
+}
+
+p.alert {
+  margin: 0 auto;
+  text-align: center;
+  color: red;
+  margin-bottom: 1em;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search .search__label {
+  margin-right: 0.5em;
+  font-size: 1.15em;
+} 
+
+.search .search__input {
+  font-size: 0.75em;
+  padding: 0.5em;
+  min-width: 200px;
+}
+
+.search .search__button {
+  margin-left: 1em;
+  font-size: 1em;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+
+.output {
+  margin: 1em;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: "poster info"
+                      "plot plot";
+}
+
+.output__poster {
+  grid-area: poster;
+  width: 100%;
+}
+
+.output__list {
+  grid-area: info;
+  padding-left: 0.5em;
+  margin: 0;
+}
+
+.output__listItem {
+  list-style-type: none;
+  margin: 0.25em; 
+}
+
+.output__plot {
+  grid-area: plot;
+}
