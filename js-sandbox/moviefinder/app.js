@@ -30,11 +30,7 @@ function handleClick(e) {
           }
         });
     } else {
-      // Clear previous messages if they exist
-      const priorMessage = document.querySelector('.alert');
-      if (priorMessage) {
-        ui.clearMessage();
-      }
+      ui.clearMessage();
       ui.displayMessage('Enter a movie below!');
     }
  
