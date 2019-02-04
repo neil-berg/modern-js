@@ -3,7 +3,7 @@
 }
 
 :root {
-  --purple: #ae4ec1;
+  --purple: #d16de6;
   --grey: #c2c2c2;
   --white: #f7f7f7;
 }
@@ -62,11 +62,11 @@ p.alert {
 
 .search .search__label {
   margin-right: 0.5em;
-  font-size: 1.15em;
+  font-size: 1.5em;
 } 
 
 .search .search__input {
-  font-size: 0.75em;
+  font-size: 1em;
   padding: 0.5em;
   min-width: 200px;
 }
@@ -75,7 +75,7 @@ p.alert {
   margin-left: 1em;
   font-size: 1em;
   padding: 0.5em;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .output {
@@ -95,7 +95,6 @@ p.alert {
 
 .output__header .title {
   font-size: 1.75em;
-  /* font-weight: bold; */
   padding: 0;
   margin: 0;
 }
