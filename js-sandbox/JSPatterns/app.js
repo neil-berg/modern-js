@@ -182,3 +182,58 @@ unsubMS.addEventListener('click', () => click.unsubscribe(getMilliseconds));
 subS.addEventListener('click', () => click.subscribe(getSeconds));
 unsubS.addEventListener('click', () => click.unsubscribe(getSeconds));
 fireBtn.addEventListener('click', () => click.fire());
+
+// MEDIATOR PATTERN
+const User = function(name) {
+  this.name = name;
+  this.chatroom = null;
+}
+
+User.prototype = {
+  send: function(message, to) {
+    this.chatroom.send(message, this, to);
+  },
+  receive: function(message, from) {
+    console.log(`${from.name} to ${this.name}: ${message}`);
+    
+  }
+}
+
+const Chatroom = function() {
+  let users = {};
+  console.log(users);
+  
+  return {
+    register: function(user) {
+      users[user.name] = user;
+      user.chatroom = this;
+    },
+    send: function(message, from, to) {
+      if (to) {
+        // Single user message
+        to.receive(message, from);
+      } else {
+        // Mass message
+        for (key in users) {
+          if (users[key] !== from) {
+            users[key].receive(message, from);
+          }
+        }
+      }
+    }
+  }
+}
+
+const neil = new User('Neil');
+const nancy = new User('Nancy');
+const mim = new User('Mim');
+
+const chatroom = new Chatroom();
+
+chatroom.register(neil);
+chatroom.register(nancy);
+chatroom.register(mim);
+
+neil.send('Hello Nancy', nancy);
+nancy.send('Hello Mim', mim);
+mim.send('Hello everyone');
